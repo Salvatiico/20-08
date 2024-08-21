@@ -1,29 +1,59 @@
 <?php
 
+class Funcionario {
 
-class Funcionario{
+    // atributos
+    public $nome = null;
+    public $telefone = null;
+    public $numFilhos = null;
 
-//atributos
-public $nome='Luis Fernando Funari Junior da Silva Filho';
-public $telefone='99 99999-9999';
-public $numFilhos=3;
 
-/* função - método */
-function resumirCardFunc() {
-    return "$this->nome e ele possui $this->numFilhos filho(s)";
+    //funções e métodos
+
+    function setNome($nome) {
+        $this->nome = $nome;
+    }
+
+    function setNumFilhos($numFilhos) {
+        $this->numFilhos = $numFilhos;
+    }
+
+    function setTelefome($telefone) {
+        $this->telefone = $telefone;
+    }
+
+    function getNome() {
+        return $this->nome = $nome;
+    }
+
+    function getNumFilhos() {
+        return $this->numFilhos = $numFilhos;
+    }
+
+    function getTelefone() {
+        return $this->telefone = $telefone;
+    }
+
+
+
+    function resumirCardFunc () {
+        return "$this->nome  e ele possui $this->numFilhos filho(s)";
+    }
+
+    function modificarNumFilhos($numFilhos) {
+       return $this->numFilhos = $numFilhos;
+    }
+
 }
 
-function modificarNumFilhos() {
-    $this->numFilhos = $numFilhos;
-}
+$y= new Funcionario();
 
-}
+//echo $y->modificarNumFilhos() . '<br/>';
 
-$k= new Funcionario();
-echo $k->modificarNumFilhos() . '<br/>';
-$k->modificarNumFilhos(3) . '<br/>';
+$y->modificarNumFilhos(3);
 
-echo $k->resumirCardFunc();
+echo $y->resumirCardFunc();
+
 
 
 ?>
