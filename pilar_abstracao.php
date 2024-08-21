@@ -1,59 +1,49 @@
-<?php
+<?php 
 
-class Funcionario {
+class Funcionario{
+    public $nome=null;
+    public $telefone=null;
+    public $num_filhos=null;
 
-    // atributos
-    public $nome = null;
-    public $telefone = null;
-    public $numFilhos = null;
-
-
-    //funções e métodos
-
-    function setNome($nome) {
+    function setNome($nome){ // o que estiver na variavel nome foi setado no atributo nome
         $this->nome = $nome;
     }
 
-    function setNumFilhos($numFilhos) {
-        $this->numFilhos = $numFilhos;
-    }
-
-    function setTelefome($telefone) {
+    function setTelefone($telefone){
         $this->telefone = $telefone;
     }
 
-    function getNome() {
-        return $this->nome = $nome;
+    function setNumFilhos($num_filhos){
+        $this->numFilhos = $num_filhos;
     }
 
-    function getNumFilhos() {
-        return $this->numFilhos = $numFilhos;
+    function getNome(){ // aqui armazenamos o valor do atributo nome
+        return $this->nome;
     }
 
-    function getTelefone() {
-        return $this->telefone = $telefone;
+    function getTelefone(){
+        return $this->telefone;
     }
 
-
-
-    function resumirCardFunc () {
-        return "$this->nome  e ele possui $this->numFilhos filho(s)";
+    function getNumFilhos(){
+        return $this->numFilhos;
     }
 
-    function modificarNumFilhos($numFilhos) {
-       return $this->numFilhos = $numFilhos;
+    function resumirCardFunc () { // aqui é a função para conectar no echo final
+        return "$this->nome e ele possui $this->num_filhos filhos";
+    }
+
+    function modificarNumFilhos ($num_filhos){
+       return $this->num_filhos = $num_filhos;
     }
 
 }
 
-$y= new Funcionario();
-
-//echo $y->modificarNumFilhos() . '<br/>';
-
-$y->modificarNumFilhos(3);
-
-echo $y->resumirCardFunc();
-
-
+// o $y vai armazenar oq esta nos sets e nos gets
+$y= new Funcionario(); // criamos um novo funcionario
+$y->setNome('Jubiscleudo'); // colocamos nome
+$y->setNumFilhos(537); // e que ele tem 537 filho kk
+echo $y->resumirCardFunc() . "<br>"; // daqui conectamos com a função 
+echo $y->getNome() . ' e possui ' . $y->getNumFilhos() . ' filhos  '; //aqui concatenamos e mostramos os valores que possuem
 
 ?>
